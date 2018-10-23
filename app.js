@@ -14,6 +14,10 @@ app.get("/", function(req, res, next) {
 	res.send("Let's get to pullin.");
 });
 
+app.post('/', function(req, res, next) {
+	res.send('Data: ' + req.body);
+});
+
 app.use(function (err, req, res, next) {
   	//res.status(err.status || 500);
   	if(err.status = 400)
