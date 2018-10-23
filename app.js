@@ -10,6 +10,10 @@ app.use(morgan('short'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", function(req, res, next) {
+	res.send("Let's get to pullin.");
+});
+
 app.use(function (err, req, res, next) {
   	//res.status(err.status || 500);
   	if(err.status = 400)
