@@ -1,8 +1,14 @@
 const express = require("express");
 const Promise = require("bluebird");
+const bodyParser = require("body-parser");
+const morgan = require('morgan');
 
 const app = express();
 const port = 3000;
+
+app.use(morgan('short'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(function (err, req, res, next) {
   	//res.status(err.status || 500);
